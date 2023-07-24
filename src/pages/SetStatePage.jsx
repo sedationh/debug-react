@@ -1,8 +1,8 @@
 import React, { useState } from "react"
 import { flushSync } from "react-dom"
-import LogEvents from "./LogEvents"
+import LogEvents from "../components/LogEvents"
 
-function SetState() {
+function SetStatePage() {
   const [cnt1, setCnt1] = useState(0)
   const [cnt2, setCnt2] = useState(0)
 
@@ -26,4 +26,4 @@ function SetState() {
   )
 }
 
-export default SetState
+export default SetStatePage

@@ -1,5 +1,5 @@
 import React, { Suspense, useMemo } from "react"
-import LogEvents from "./LogEvents"
+import LogEvents from "../components/LogEvents"
 
 // This is a workaround for a bug to get the demo running.
 // TODO: replace with real implementation when the bug is fixed.

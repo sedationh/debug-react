@@ -1,4 +1,4 @@
-import { useLayoutEffect, useRef } from "react"
+import { useLayoutEffect } from "react"
 
 function LogEvents({ name = "LogEvents" }) {
   useLayoutEffect(() => {

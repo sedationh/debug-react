@@ -1,7 +1,8 @@
 import { Suspense } from "react"
 import LogEvents from "./components/LogEvents"
-import SuspensePage from "./components/SuspensePage"
-import SetState from "./components/SetState"
+import SuspensePage from "./pages/SuspensePage"
+import SetStatePage from "./pages/SetStatePage"
+import ErrorPage from "./pages/ErrorPage"
 
 function App() {
   return (
@@ -9,6 +10,7 @@ function App() {
       {/* <SetState /> */}
       <SuspensePage />
       {/* <LogEvents /> */}
+      {/* <ErrorPage /> */}
     </div>
   )
 }
