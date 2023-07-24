@@ -1,8 +1,6 @@
-import React, { Suspense, useMemo } from "react"
+import React, { Suspense, useState } from "react"
 import LogEvents from "../components/LogEvents"
 
-// This is a workaround for a bug to get the demo running.
-// TODO: replace with real implementation when the bug is fixed.
 function use(promise) {
   if (promise.status === "fulfilled") {
     return promise.value
@@ -34,7 +32,7 @@ const mockApi = () =>
   })
 
 function SuspensePage() {
-  const resource = useMemo(() => mockApi(), [])
+  const [resource, setResource] = useState(Promise.resolve("not start"))
 
   return (
     <div>
@@ -42,6 +40,13 @@ function SuspensePage() {
       <Suspense fallback={<div>Loading</div>}>
         <SuspenseChild resource={resource} />
       </Suspense>
+      <button
+        onClick={() => {
+          setResource(mockApi())
+        }}
+      >
+        Fetch
+      </button>
     </div>
   )
 }
