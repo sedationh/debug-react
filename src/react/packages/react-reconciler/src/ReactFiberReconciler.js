@@ -90,6 +90,7 @@ import {
   getCurrentUpdatePriority as getCurrentUpdatePriority_new,
 } from './ReactFiberReconciler.new';
 
+console.log('sedationh enableNewReconciler', enableNewReconciler)
 export const createContainer = enableNewReconciler
   ? createContainer_new
   : createContainer_old;

@@ -78,6 +78,7 @@ export type Fiber = {|
   // Tag identifying the type of fiber.
   tag: WorkTag,
 
+  // STUDY: seda 当前节点在当前层级下唯一
   // Unique identifier of this child.
   key: null | string,
 
@@ -89,6 +90,7 @@ export type Fiber = {|
   type: any,
 
   // The local state associated with this fiber.
+  // STUDY: seda host dome; class instance
   stateNode: any,
 
   // Conceptual aliases
@@ -101,11 +103,15 @@ export type Fiber = {|
   // This is effectively the parent, but there can be multiple parents (two)
   // so this is only the parent of the thing we're currently processing.
   // It is conceptually the same as the return address of a stack frame.
+  // STUDY: seda 父节点
   return: Fiber | null,
 
   // Singly Linked List Tree Structure.
+  // STUDY: seda 第一个子节点
   child: Fiber | null,
+  // STUDY: seda 下一个兄弟
   sibling: Fiber | null,
+  // STUDY: seda 单链表结构、标记当前节点在当前层级下的位置
   index: number,
 
   // The ref last used to attach this node.
@@ -139,6 +145,7 @@ export type Fiber = {|
   // Effect
   flags: Flags,
   subtreeFlags: Flags,
+  // STUDY: seda 要删除的子节点
   deletions: Array<Fiber> | null,
 
   // Singly linked list fast path to the next fiber with side-effects.

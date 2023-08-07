@@ -231,6 +231,7 @@ export function createRoot(
     onRecoverableError,
     transitionCallbacks,
   );
+  console.log('sedationh createContainer root', root)
   markContainerAsRoot(root.current, container);
 
   const rootContainerElement: Document | Element | DocumentFragment =
@@ -328,6 +329,7 @@ export function hydrateRoot(
 }
 
 export function isValidContainer(node: any): boolean {
+  // STUDY: seda document.getElementById("root") 这样一般 是 ELEMENT_NODE
   return !!(
     node &&
     (node.nodeType === ELEMENT_NODE ||

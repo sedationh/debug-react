@@ -147,6 +147,7 @@ const Internals = {
   ],
 };
 
+// STUDY: seda ReactDOM.createRoot 入口
 function createRoot(
   container: Element | Document | DocumentFragment,
   options?: CreateRootOptions,
