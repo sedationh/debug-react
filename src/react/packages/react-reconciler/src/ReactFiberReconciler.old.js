@@ -318,6 +318,7 @@ export function createHydrationContainer(
   return root;
 }
 
+// STUDY: seda render 后会调用这个 updateContainer
 export function updateContainer(
   element: ReactNodeList,
   container: OpaqueRoot,

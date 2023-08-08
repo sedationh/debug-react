@@ -86,12 +86,14 @@ const defaultOnRecoverableError =
       };
 
 function ReactDOMRoot(internalRoot: FiberRoot) {
+  // STUDY: seda 提供给后面的 render 去用
   this._internalRoot = internalRoot;
 }
 
 ReactDOMHydrationRoot.prototype.render = ReactDOMRoot.prototype.render = function(
   children: ReactNodeList,
 ): void {
+  // STUDY: seda ReactDOMRoot 里搞好的
   const root = this._internalRoot;
   if (root === null) {
     throw new Error('Cannot update an unmounted root.');
@@ -131,6 +133,7 @@ ReactDOMHydrationRoot.prototype.render = ReactDOMRoot.prototype.render = functio
       }
     }
   }
+  console.log('sedationh render', root, children)
   updateContainer(children, root, null, null);
 };
 
